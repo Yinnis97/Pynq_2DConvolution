@@ -1,0 +1,36 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/DevWorks_HLS/Convolution_Project/HLS/HLS_Pooling/solution1/csynth.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=Pooling" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/DevWorks_HLS/Convolution_Project/HLS/HLS_Pooling/solution1/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=Pooling" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in_image offset=slave bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=max_pool_image offset=slave bundle=gmem1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=min_pool_image offset=slave bundle=gmem2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=in_image bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=max_pool_image bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=min_pool_image bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLS_Pooling/sources/pooling.c:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Pooling" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

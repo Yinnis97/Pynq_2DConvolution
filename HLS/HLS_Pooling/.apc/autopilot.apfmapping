@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="pooling.c" path="C:\DevWorks_HLS\Convolution_Project\HLS\HLS_Pooling\sources\pooling.c"/>
+    <originFiles name="smiley_128x128.bmp" path="C:\Users\12302157\Downloads\smiley_128x128.bmp"/>
+  </source>
+  <testbench>
+    <originFiles name="pooling_tb.c" path="C:\DevWorks_HLS\Convolution_Project\HLS\HLS_Pooling\sources\pooling_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

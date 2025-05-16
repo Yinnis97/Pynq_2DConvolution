@@ -1,0 +1,130 @@
+---
+MainSourceFile:  'C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/.autopilot/db/conv2d.pp.0.c'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_39_1:  '
+    FileOffset:      39
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          33405
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_39_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_40_2:  '
+    FileOffset:      40
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          33461
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_40_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_43_3:  '
+    FileOffset:      43
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          33551
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_43_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_44_4:  '
+    FileOffset:      44
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          33597
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_44_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_56_5:  '
+    FileOffset:      56
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          33888
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_56_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_57_6:  '
+    FileOffset:      57
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          33944
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_57_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_60_7:  '
+    FileOffset:      60
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34034
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_60_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_61_8:  '
+    FileOffset:      61
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34080
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_61_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_73_9:  '
+    FileOffset:      73
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34371
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_73_9: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_74_10:  '
+    FileOffset:      74
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34423
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_74_10: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_85_11:  '
+    FileOffset:      85
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34657
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_85_11: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_87_12:  '
+    FileOffset:      87
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34713
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_87_12: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_98_13:  '
+    FileOffset:      98
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34930
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_98_13: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_100_14:  '
+    FileOffset:      100
+    FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c'
+    Replacements:    
+      - FilePath:        'C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c'
+        Offset:          34997
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_100_14: '
+...

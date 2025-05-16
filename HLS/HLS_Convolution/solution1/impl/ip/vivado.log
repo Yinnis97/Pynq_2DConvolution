@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue May 13 12:46:33 2025
+# Process ID: 12228
+# Current directory: C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/vivado.log
+# Journal file: C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip\vivado.jou
+# Running On        :5CD322B2FW
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :AMD Ryzen 5 PRO 7530U with Radeon Graphics     
+# CPU Frequency     :1996 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16442 MB
+# Swap memory       :1073 MB
+# Total Virtual     :17516 MB
+# Available Virtual :4186 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/solution1_data.json outdir=C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip srcdir=C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1 sort_interfaces_ports=false
+INFO: Copied 1 ipmisc file(s) to C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/misc
+INFO: Copied 13 verilog file(s) to C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/hdl/verilog
+INFO: Copied 13 vhdl file(s) to C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/hdl/vhdl
+INFO: Copied 10 swdriver file(s) to C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/drivers
+ipx::create_core: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 493.203 ; gain = 194.980
+INFO: Import ports from HDL: C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/hdl/vhdl/conv2d.vhd (conv2d)
+INFO: Add axi4lite interface s_axi_CTRL
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst_n
+INFO: Add interrupt interface interrupt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: Add axi4full interface m_axi_gmem
+INFO: Add axi4full interface m_axi_gmem1
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/component.xml
+INFO: Created IP archive C:/DevWorks_HLS/Convolution_Project/HLS_Convolution/solution1/impl/ip/xilinx_com_hls_conv2d_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Tue May 13 12:46:47 2025...

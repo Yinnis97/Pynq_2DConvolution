@@ -1,0 +1,70 @@
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:853:5: warning: Added loop label VITIS_LOOP_39_1:   [xilinx-label-all-loops]
+    for (int row = 0; row < (128 - 3 + 1); ++row) {
+    ^~~
+    VITIS_LOOP_39_1: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:853:5: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:854:9: warning: Added loop label VITIS_LOOP_40_2:   [xilinx-label-all-loops]
+        for (int col = 0; col < (128 - 3 + 1); ++col) {
+        ^~~
+        VITIS_LOOP_40_2: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:854:9: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:857:13: warning: Added loop label VITIS_LOOP_43_3:   [xilinx-label-all-loops]
+            for (int i = 0; i < 3; ++i) {
+            ^~~
+            VITIS_LOOP_43_3: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:857:13: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:858:17: warning: Added loop label VITIS_LOOP_44_4:   [xilinx-label-all-loops]
+                for (int j = 0; j < 3; ++j) {
+                ^~~
+                VITIS_LOOP_44_4: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:858:17: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:870:5: warning: Added loop label VITIS_LOOP_56_5:   [xilinx-label-all-loops]
+    for (int row = 0; row < (128 - 3 + 1); ++row) {
+    ^~~
+    VITIS_LOOP_56_5: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:870:5: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:871:9: warning: Added loop label VITIS_LOOP_57_6:   [xilinx-label-all-loops]
+        for (int col = 0; col < (128 - 3 + 1); ++col) {
+        ^~~
+        VITIS_LOOP_57_6: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:871:9: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:874:13: warning: Added loop label VITIS_LOOP_60_7:   [xilinx-label-all-loops]
+            for (int i = 0; i < 3; ++i) {
+            ^~~
+            VITIS_LOOP_60_7: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:874:13: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:875:17: warning: Added loop label VITIS_LOOP_61_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 3; ++j) {
+                ^~~
+                VITIS_LOOP_61_8: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:875:17: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:887:5: warning: Added loop label VITIS_LOOP_73_9:   [xilinx-label-all-loops]
+    for (int i = 0; i < ((128 - 3) + 1); ++i) {
+    ^~~
+    VITIS_LOOP_73_9: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:887:5: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:888:9: warning: Added loop label VITIS_LOOP_74_10:   [xilinx-label-all-loops]
+        for (int j = 0; j < ((128 - 3) + 1); ++j) {
+        ^~~
+        VITIS_LOOP_74_10: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:888:9: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:899:5: warning: Added loop label VITIS_LOOP_85_11:   [xilinx-label-all-loops]
+    for (uint16_t row = 0; row < 128 ; ++row)
+    ^~~
+    VITIS_LOOP_85_11: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:899:5: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:901:9: warning: Added loop label VITIS_LOOP_87_12:   [xilinx-label-all-loops]
+        for (uint16_t col = 0; col < 128 ; ++col)
+        ^~~
+        VITIS_LOOP_87_12: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:901:9: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:912:5: warning: Added loop label VITIS_LOOP_98_13:   [xilinx-label-all-loops]
+    for (uint16_t row = 0; row < ((128 - 3) + 1); ++row)
+    ^~~
+    VITIS_LOOP_98_13: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:912:5: note: FIX-IT applied suggested code changes
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:914:9: warning: Added loop label VITIS_LOOP_100_14:   [xilinx-label-all-loops]
+        for (uint16_t col = 0; col < ((128 - 3) + 1); ++col)
+        ^~~
+        VITIS_LOOP_100_14: 
+C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\solution1\.autopilot\db\conv2d.pp.0.c:914:9: note: FIX-IT applied suggested code changes

@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "pooling.c",
+    "fileloc": 10,
+    "instructions": 46,
+    "loads": {
+      "T": 4
+    },
+    "name": "Pooling",
+    "stores": {
+      "T": 2
+    },
+    "total_instructions": 46
+  }
+}

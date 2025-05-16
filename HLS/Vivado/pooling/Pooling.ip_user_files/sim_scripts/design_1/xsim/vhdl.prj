@@ -1,0 +1,15 @@
+vhdl xil_defaultlib  \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_CTRL_s_axi.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_flow_control_loop_pipe_sequential_init.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_gmem1_m_axi.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_gmem2_m_axi.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_gmem_m_axi.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_Pooling_Pipeline_VITIS_LOOP_24_1_VITIS_LOOP_25_2.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling_Pooling_Pipeline_VITIS_LOOP_39_3_VITIS_LOOP_40_4.vhd" \
+"../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ee54/hdl/vhdl/Pooling.vhd" \
+"../../../bd/design_1/ip/design_1_Pooling_0_0/sim/design_1_Pooling_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+# Do not sort compile order
+nosort

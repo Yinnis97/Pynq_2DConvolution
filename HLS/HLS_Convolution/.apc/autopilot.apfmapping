@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="conv2d.c" path="C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d.c"/>
+  </source>
+  <testbench>
+    <originFiles name="conv2d_tb.c" path="C:\DevWorks_HLS\Convolution_Project\HLS_Convolution\sources\conv2d_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

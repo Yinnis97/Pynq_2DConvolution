@@ -1,0 +1,406 @@
+
+
+================================================================
+== Vitis HLS Report for 'Pooling'
+================================================================
+* Date:           Fri May 16 11:57:19 2025
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        HLS_Pooling
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  8.00 ns|  5.840 ns|     2.16 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    65671|    65671|  0.525 ms|  0.525 ms|  65672|  65672|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop_row_1   |    65664|    65664|      1026|          -|          -|    64|        no|
+        | + Loop_col_1  |     1024|     1024|        16|          -|          -|    64|        no|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 20 4 
+4 --> 5 3 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 4 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%row = alloca i32 1" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 25 'alloca' 'row' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%indvar = alloca i32 1"   --->   Operation 26 'alloca' 'indvar' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (1.00ns)   --->   "%min_pool_image_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %min_pool_image" [HLS_Pooling/sources/pooling.c:11]   --->   Operation 27 'read' 'min_pool_image_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 28 [1/1] (1.00ns)   --->   "%max_pool_image_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %max_pool_image" [HLS_Pooling/sources/pooling.c:11]   --->   Operation 28 'read' 'max_pool_image_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 29 [1/1] (1.00ns)   --->   "%in_image_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %in_image" [HLS_Pooling/sources/pooling.c:11]   --->   Operation 29 'read' 'in_image_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%gmem2_addr = getelementptr i8 %gmem2, i64 %min_pool_image_read" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 30 'getelementptr' 'gmem2_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%gmem1_addr = getelementptr i8 %gmem1, i64 %max_pool_image_read" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 31 'getelementptr' 'gmem1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (1.58ns)   --->   "%store_ln0 = store i7 0, i7 %indvar"   --->   Operation 32 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 33 [1/1] (1.58ns)   --->   "%store_ln24 = store i8 0, i8 %row" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 33 'store' 'store_ln24' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 5.84>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%spectopmodule_ln10 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_13" [HLS_Pooling/sources/pooling.c:10]   --->   Operation 34 'spectopmodule' 'spectopmodule_ln10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %gmem"   --->   Operation 36 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem1, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_3, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %gmem1"   --->   Operation 38 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem2, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_4, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %gmem2"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_image, void @empty_5, i32 4294967295, i32 4294967295, void @empty_6, i32 0, i32 0, void @empty_7, void @empty_8, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_9, i32 4294967295, i32 0, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_image, void @empty_10, i32 4294967295, i32 4294967295, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_9, i32 4294967295, i32 0, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %max_pool_image, void @empty_5, i32 4294967295, i32 4294967295, void @empty_6, i32 0, i32 0, void @empty_7, void @empty_11, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_9, i32 4294967295, i32 0, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %max_pool_image, void @empty_10, i32 4294967295, i32 4294967295, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_9, i32 4294967295, i32 0, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %min_pool_image, void @empty_5, i32 4294967295, i32 4294967295, void @empty_6, i32 0, i32 0, void @empty_7, void @empty_12, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_9, i32 4294967295, i32 0, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %min_pool_image, void @empty_10, i32 4294967295, i32 4294967295, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_9, i32 4294967295, i32 0, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_5, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_7, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (5.84ns)   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i8, i8 %gmem2_addr, i64 4096" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 48 'writereq' 'empty' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 49 [1/1] (5.84ns)   --->   "%empty_28 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i8, i8 %gmem1_addr, i64 4096" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 49 'writereq' 'empty_28' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%br_ln24 = br void %Loop_col_1" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 50 'br' 'br_ln24' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.45>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%indvar_load = load i7 %indvar" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 51 'load' 'indvar_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (1.87ns)   --->   "%icmp_ln24 = icmp_eq  i7 %indvar_load, i7 64" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 52 'icmp' 'icmp_ln24' <Predicate = true> <Delay = 1.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/1] (1.87ns)   --->   "%add_ln24_1 = add i7 %indvar_load, i7 1" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 53 'add' 'add_ln24_1' <Predicate = true> <Delay = 1.87> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%br_ln24 = br i1 %icmp_ln24, void %Loop_col_1.split, void %for.end149" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 54 'br' 'br_ln24' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%row_load = load i8 %row"   --->   Operation 55 'load' 'row_load' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%specpipeline_ln26 = specpipeline void @_ssdm_op_SpecPipeline, i32 0, i32 0, i32 1, i32 0, void @empty_0" [HLS_Pooling/sources/pooling.c:26]   --->   Operation 56 'specpipeline' 'specpipeline_ln26' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%speclooptripcount_ln24 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 64, i64 64, i64 64" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 57 'speclooptripcount' 'speclooptripcount_ln24' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%specloopname_ln24 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 58 'specloopname' 'specloopname_ln24' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%empty_29 = trunc i8 %row_load"   --->   Operation 59 'trunc' 'empty_29' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i7.i7, i7 %empty_29, i7 0"   --->   Operation 60 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%p_cast = zext i14 %tmp_1"   --->   Operation 61 'zext' 'p_cast' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_2 = partselect i6 @_ssdm_op_PartSelect.i6.i8.i32.i32, i8 %row_load, i32 1, i32 6"   --->   Operation 62 'partselect' 'tmp_2' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i6.i8, i6 %tmp_2, i8 128"   --->   Operation 63 'bitconcatenate' 'tmp_3' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%zext_ln28 = zext i14 %tmp_3" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 64 'zext' 'zext_ln28' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (1.58ns)   --->   "%br_ln28 = br void %for.body4" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 65 'br' 'br_ln28' <Predicate = (!icmp_ln24)> <Delay = 1.58>
+
+State 4 <SV = 3> <Delay = 3.52>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%indvar9 = phi i7 %add_ln28_1, void %for.body4.split, i7 0, void %Loop_col_1.split" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 66 'phi' 'indvar9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%col = phi i8 %add_ln28, void %for.body4.split, i8 0, void %Loop_col_1.split" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 67 'phi' 'col' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (1.87ns)   --->   "%icmp_ln28 = icmp_eq  i7 %indvar9, i7 64" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 68 'icmp' 'icmp_ln28' <Predicate = true> <Delay = 1.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 69 [1/1] (1.87ns)   --->   "%add_ln28_1 = add i7 %indvar9, i7 1" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 69 'add' 'add_ln28_1' <Predicate = true> <Delay = 1.87> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln28 = br i1 %icmp_ln28, void %for.body4.split, void %for.inc147" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 70 'br' 'br_ln28' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (0.00ns)   --->   "%zext_ln28_1 = zext i8 %col" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 71 'zext' 'zext_ln28_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_4 : Operation 72 [1/1] (3.52ns)   --->   "%add_ln31_2 = add i64 %zext_ln28_1, i64 %in_image_read" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 72 'add' 'add_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 73 [1/1] (1.91ns)   --->   "%add_ln28 = add i8 %col, i8 2" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 73 'add' 'add_ln28' <Predicate = (!icmp_ln28)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%row_load_1 = load i8 %row" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 74 'load' 'row_load_1' <Predicate = (icmp_ln28)> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (1.91ns)   --->   "%add_ln24 = add i8 %row_load_1, i8 2" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 75 'add' 'add_ln24' <Predicate = (icmp_ln28)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 76 [1/1] (1.58ns)   --->   "%store_ln24 = store i7 %add_ln24_1, i7 %indvar" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 76 'store' 'store_ln24' <Predicate = (icmp_ln28)> <Delay = 1.58>
+ST_4 : Operation 77 [1/1] (1.58ns)   --->   "%store_ln24 = store i8 %add_ln24, i8 %row" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 77 'store' 'store_ln24' <Predicate = (icmp_ln28)> <Delay = 1.58>
+ST_4 : Operation 78 [1/1] (0.00ns)   --->   "%br_ln24 = br void %Loop_col_1" [HLS_Pooling/sources/pooling.c:24]   --->   Operation 78 'br' 'br_ln24' <Predicate = (icmp_ln28)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 3.52>
+ST_5 : Operation 79 [1/1] (3.52ns)   --->   "%add_ln31 = add i64 %add_ln31_2, i64 %zext_ln28" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 79 'add' 'add_ln31' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 80 [1/1] (3.52ns)   --->   "%add_ln31_1 = add i64 %add_ln31_2, i64 %p_cast" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 80 'add' 'add_ln31_1' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i8 %gmem, i64 %add_ln31_1" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 81 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%gmem_addr_1 = getelementptr i8 %gmem, i64 %add_ln31" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 82 'getelementptr' 'gmem_addr_1' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 5.84>
+ST_6 : Operation 83 [8/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 83 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 5.84>
+ST_7 : Operation 84 [7/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 84 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 85 [8/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 85 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 5.84>
+ST_8 : Operation 86 [6/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 86 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 87 [7/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 87 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 5.84>
+ST_9 : Operation 88 [5/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 88 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 89 [6/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 89 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 5.84>
+ST_10 : Operation 90 [4/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 90 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 91 [5/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 91 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 5.84>
+ST_11 : Operation 92 [3/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 92 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 93 [4/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 93 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 5.84>
+ST_12 : Operation 94 [2/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 94 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 95 [3/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 95 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 5.84>
+ST_13 : Operation 96 [1/8] (5.84ns)   --->   "%empty_30 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i64 2" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 96 'readreq' 'empty_30' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 97 [2/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 97 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 5.84>
+ST_14 : Operation 98 [1/1] (5.84ns)   --->   "%max_val_4 = read i8 @_ssdm_op_Read.m_axi.p1i8, i8 %gmem_addr" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 98 'read' 'max_val_4' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 99 [1/8] (5.84ns)   --->   "%empty_31 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr_1, i64 2" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 99 'readreq' 'empty_31' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 14> <Delay = 5.84>
+ST_15 : Operation 100 [1/1] (5.84ns)   --->   "%gmem_addr_read_1 = read i8 @_ssdm_op_Read.m_axi.p1i8, i8 %gmem_addr" [HLS_Pooling/sources/pooling.c:31]   --->   Operation 100 'read' 'gmem_addr_read_1' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 15> <Delay = 5.84>
+ST_16 : Operation 101 [1/1] (1.91ns)   --->   "%icmp_ln35 = icmp_ugt  i8 %gmem_addr_read_1, i8 %max_val_4" [HLS_Pooling/sources/pooling.c:35]   --->   Operation 101 'icmp' 'icmp_ln35' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 102 [1/1] (1.24ns)   --->   "%max_val = select i1 %icmp_ln35, i8 %gmem_addr_read_1, i8 %max_val_4" [HLS_Pooling/sources/pooling.c:35]   --->   Operation 102 'select' 'max_val' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 103 [1/1] (5.84ns)   --->   "%gmem_addr_1_read = read i8 @_ssdm_op_Read.m_axi.p1i8, i8 %gmem_addr_1" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 103 'read' 'gmem_addr_1_read' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 104 [1/1] (1.91ns)   --->   "%icmp_ln40 = icmp_ult  i8 %gmem_addr_read_1, i8 %max_val_4" [HLS_Pooling/sources/pooling.c:40]   --->   Operation 104 'icmp' 'icmp_ln40' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 105 [1/1] (1.24ns)   --->   "%min_val_1 = select i1 %icmp_ln40, i8 %gmem_addr_read_1, i8 %max_val_4" [HLS_Pooling/sources/pooling.c:40]   --->   Operation 105 'select' 'min_val_1' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 5.84>
+ST_17 : Operation 106 [1/1] (5.84ns)   --->   "%gmem_addr_1_read_1 = read i8 @_ssdm_op_Read.m_axi.p1i8, i8 %gmem_addr_1" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 106 'read' 'gmem_addr_1_read_1' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 107 [1/1] (1.91ns)   --->   "%icmp_ln36 = icmp_ugt  i8 %gmem_addr_1_read, i8 %max_val" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 107 'icmp' 'icmp_ln36' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 108 [1/1] (1.24ns)   --->   "%max_val_2 = select i1 %icmp_ln36, i8 %gmem_addr_1_read, i8 %max_val" [HLS_Pooling/sources/pooling.c:36]   --->   Operation 108 'select' 'max_val_2' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_17 : Operation 109 [1/1] (1.91ns)   --->   "%icmp_ln41 = icmp_ult  i8 %gmem_addr_1_read, i8 %min_val_1" [HLS_Pooling/sources/pooling.c:41]   --->   Operation 109 'icmp' 'icmp_ln41' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 110 [1/1] (1.24ns)   --->   "%min_val_2 = select i1 %icmp_ln41, i8 %gmem_addr_1_read, i8 %min_val_1" [HLS_Pooling/sources/pooling.c:41]   --->   Operation 110 'select' 'min_val_2' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 3.16>
+ST_18 : Operation 111 [1/1] (1.91ns)   --->   "%icmp_ln37 = icmp_ugt  i8 %gmem_addr_1_read_1, i8 %max_val_2" [HLS_Pooling/sources/pooling.c:37]   --->   Operation 111 'icmp' 'icmp_ln37' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 112 [1/1] (1.24ns)   --->   "%max_val_3 = select i1 %icmp_ln37, i8 %gmem_addr_1_read_1, i8 %max_val_2" [HLS_Pooling/sources/pooling.c:37]   --->   Operation 112 'select' 'max_val_3' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 113 [1/1] (1.91ns)   --->   "%icmp_ln42 = icmp_ult  i8 %gmem_addr_1_read_1, i8 %min_val_2" [HLS_Pooling/sources/pooling.c:42]   --->   Operation 113 'icmp' 'icmp_ln42' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 114 [1/1] (1.24ns)   --->   "%min_val_3 = select i1 %icmp_ln42, i8 %gmem_addr_1_read_1, i8 %min_val_2" [HLS_Pooling/sources/pooling.c:42]   --->   Operation 114 'select' 'min_val_3' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 5.84>
+ST_19 : Operation 115 [1/1] (0.00ns)   --->   "%specpipeline_ln30 = specpipeline void @_ssdm_op_SpecPipeline, i32 0, i32 0, i32 1, i32 0, void @empty_0" [HLS_Pooling/sources/pooling.c:30]   --->   Operation 115 'specpipeline' 'specpipeline_ln30' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 116 [1/1] (0.00ns)   --->   "%speclooptripcount_ln28 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 64, i64 64, i64 64" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 116 'speclooptripcount' 'speclooptripcount_ln28' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 117 [1/1] (0.00ns)   --->   "%specloopname_ln28 = specloopname void @_ssdm_op_SpecLoopName, void @empty_14" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 117 'specloopname' 'specloopname_ln28' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 118 [1/1] (5.84ns)   --->   "%write_ln45 = write void @_ssdm_op_Write.m_axi.p1i8, i8 %gmem2_addr, i8 %min_val_3, i1 1" [HLS_Pooling/sources/pooling.c:45]   --->   Operation 118 'write' 'write_ln45' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 119 [1/1] (5.84ns)   --->   "%write_ln47 = write void @_ssdm_op_Write.m_axi.p1i8, i8 %gmem1_addr, i8 %max_val_3, i1 1" [HLS_Pooling/sources/pooling.c:47]   --->   Operation 119 'write' 'write_ln47' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln28 = br void %for.body4" [HLS_Pooling/sources/pooling.c:28]   --->   Operation 120 'br' 'br_ln28' <Predicate = true> <Delay = 0.00>
+
+State 20 <SV = 3> <Delay = 5.84>
+ST_20 : Operation 121 [5/5] (5.84ns)   --->   "%empty_32 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem2_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 121 'writeresp' 'empty_32' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 122 [5/5] (5.84ns)   --->   "%empty_33 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem1_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 122 'writeresp' 'empty_33' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 21 <SV = 4> <Delay = 5.84>
+ST_21 : Operation 123 [4/5] (5.84ns)   --->   "%empty_32 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem2_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 123 'writeresp' 'empty_32' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 124 [4/5] (5.84ns)   --->   "%empty_33 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem1_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 124 'writeresp' 'empty_33' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 22 <SV = 5> <Delay = 5.84>
+ST_22 : Operation 125 [3/5] (5.84ns)   --->   "%empty_32 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem2_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 125 'writeresp' 'empty_32' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 126 [3/5] (5.84ns)   --->   "%empty_33 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem1_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 126 'writeresp' 'empty_33' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 6> <Delay = 5.84>
+ST_23 : Operation 127 [2/5] (5.84ns)   --->   "%empty_32 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem2_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 127 'writeresp' 'empty_32' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 128 [2/5] (5.84ns)   --->   "%empty_33 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem1_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 128 'writeresp' 'empty_33' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 7> <Delay = 5.84>
+ST_24 : Operation 129 [1/5] (5.84ns)   --->   "%empty_32 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem2_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 129 'writeresp' 'empty_32' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 130 [1/5] (5.84ns)   --->   "%empty_33 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem1_addr" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 130 'writeresp' 'empty_33' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 131 [1/1] (0.00ns)   --->   "%ret_ln50 = ret" [HLS_Pooling/sources/pooling.c:50]   --->   Operation 131 'ret' 'ret_ln50' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8.000ns, clock uncertainty: 2.160ns.
+
+ <State 1>: 1.588ns
+The critical path consists of the following:
+	'alloca' operation 7 bit ('indvar') [8]  (0.000 ns)
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar' [30]  (1.588 ns)
+
+ <State 2>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS_Pooling/sources/pooling.c:24) on port 'gmem2' (HLS_Pooling/sources/pooling.c:24) [27]  (5.840 ns)
+
+ <State 3>: 3.458ns
+The critical path consists of the following:
+	'load' operation 7 bit ('indvar_load', HLS_Pooling/sources/pooling.c:24) on local variable 'indvar' [34]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln24', HLS_Pooling/sources/pooling.c:24) [35]  (1.870 ns)
+	blocking operation 1.588 ns on control path)
+
+ <State 4>: 3.520ns
+The critical path consists of the following:
+	'phi' operation 8 bit ('col', HLS_Pooling/sources/pooling.c:28) with incoming values : ('add_ln28', HLS_Pooling/sources/pooling.c:28) [52]  (0.000 ns)
+	'add' operation 64 bit ('add_ln31_2', HLS_Pooling/sources/pooling.c:31) [61]  (3.520 ns)
+
+ <State 5>: 3.520ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln31', HLS_Pooling/sources/pooling.c:31) [62]  (3.520 ns)
+
+ <State 6>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 7>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 8>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 9>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 10>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 11>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 12>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 13>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_30', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [65]  (5.840 ns)
+
+ <State 14>: 5.840ns
+The critical path consists of the following:
+	bus read operation ('max_val', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [66]  (5.840 ns)
+
+ <State 15>: 5.840ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_read_1', HLS_Pooling/sources/pooling.c:31) on port 'gmem' (HLS_Pooling/sources/pooling.c:31) [67]  (5.840 ns)
+
+ <State 16>: 5.840ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_1_read', HLS_Pooling/sources/pooling.c:36) on port 'gmem' (HLS_Pooling/sources/pooling.c:36) [72]  (5.840 ns)
+
+ <State 17>: 5.840ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_1_read_1', HLS_Pooling/sources/pooling.c:36) on port 'gmem' (HLS_Pooling/sources/pooling.c:36) [73]  (5.840 ns)
+
+ <State 18>: 3.163ns
+The critical path consists of the following:
+	'icmp' operation 1 bit ('icmp_ln37', HLS_Pooling/sources/pooling.c:37) [76]  (1.915 ns)
+	'select' operation 8 bit ('max_val', HLS_Pooling/sources/pooling.c:37) [77]  (1.248 ns)
+
+ <State 19>: 5.840ns
+The critical path consists of the following:
+	bus write operation ('write_ln45', HLS_Pooling/sources/pooling.c:45) on port 'gmem2' (HLS_Pooling/sources/pooling.c:45) [84]  (5.840 ns)
+
+ <State 20>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_32', HLS_Pooling/sources/pooling.c:50) on port 'gmem2' (HLS_Pooling/sources/pooling.c:50) [95]  (5.840 ns)
+
+ <State 21>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_32', HLS_Pooling/sources/pooling.c:50) on port 'gmem2' (HLS_Pooling/sources/pooling.c:50) [95]  (5.840 ns)
+
+ <State 22>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_32', HLS_Pooling/sources/pooling.c:50) on port 'gmem2' (HLS_Pooling/sources/pooling.c:50) [95]  (5.840 ns)
+
+ <State 23>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_32', HLS_Pooling/sources/pooling.c:50) on port 'gmem2' (HLS_Pooling/sources/pooling.c:50) [95]  (5.840 ns)
+
+ <State 24>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_32', HLS_Pooling/sources/pooling.c:50) on port 'gmem2' (HLS_Pooling/sources/pooling.c:50) [95]  (5.840 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

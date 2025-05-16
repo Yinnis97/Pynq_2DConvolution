@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:42.298+0200"/>
+        <logs message="Error loading image.&#xD;&#xA;@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:42.282+0200"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:19.297+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find source file smiley_128x128.bmp; skipping it." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:09.782+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:09.691+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:09.678+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find design file 'smiley_128x128.bmp'" projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:08.964+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xD;&#xA;Sourcing Tcl script 'C:/DevWorks_HLS/Convolution_Project/HLS/HLS_Pooling/solution1/csynth.tcl'" projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:08.953+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Environment variable 'CPLUS_INCLUDE_PATH' is set to C:\msys64\mingw64\include." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:57:08.941+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:59:12.162+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:59:12.145+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xD;&#xA;Sourcing Tcl script 'C:/DevWorks_HLS/Convolution_Project/HLS/HLS_Pooling/solution1/csim.tcl'" projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:59:11.326+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Environment variable 'CPLUS_INCLUDE_PATH' is set to C:\msys64\mingw64\include." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:59:11.311+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:40.971+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:40.957+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find design file 'smiley_128x128.bmp'" projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:40.247+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xD;&#xA;Sourcing Tcl script 'C:/DevWorks_HLS/Convolution_Project/HLS/HLS_Pooling/solution1/csim.tcl'" projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:40.235+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Environment variable 'CPLUS_INCLUDE_PATH' is set to C:\msys64\mingw64\include." projectName="HLS_Pooling" solutionName="solution1" date="2025-05-16T11:58:40.220+0200" type="Warning"/>
+      </csimLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,12 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.1/data/xilinx_vip/include" --include "../../../../Pooling.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../Pooling.gen/sources_1/bd/design_1/ipshared/b28c/hdl" --include "../../../../Pooling.gen/sources_1/bd/design_1/ip/design_1_Pooling_0_0/drivers/Pooling_v1_0/src" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
+"../../../bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

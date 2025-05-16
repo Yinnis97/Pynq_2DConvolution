@@ -1,0 +1,20 @@
+vhdl xil_defaultlib  \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_conv2d_Pipeline_VITIS_LOOP_39_1_VITIS_LOOP_40_2.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_conv2d_Pipeline_VITIS_LOOP_56_5_VITIS_LOOP_57_6.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_conv2d_Pipeline_VITIS_LOOP_73_9_VITIS_LOOP_74_10.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_conv2d_Pipeline_VITIS_LOOP_85_11_VITIS_LOOP_87_12.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_conv2d_Pipeline_VITIS_LOOP_98_13_VITIS_LOOP_100_14.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_CTRL_s_axi.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_flow_control_loop_pipe_sequential_init.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_gmem1_m_axi.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_gmem_m_axi.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_out_image_sobel_RAM_AUTO_1R1W.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_out_image_x_RAM_AUTO_1R1W.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d_udiv_23ns_16ns_8_27_1.vhd" \
+"../../../../2dconv.gen/sources_1/bd/design_1/ipshared/f927/hdl/vhdl/conv2d.vhd" \
+"../../../bd/design_1/ip/design_1_conv2d_0_1/sim/design_1_conv2d_0_1.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_1/sim/design_1_rst_ps7_0_100M_1.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+# Do not sort compile order
+nosort

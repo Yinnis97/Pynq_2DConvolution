@@ -1,0 +1,21 @@
+{
+    "0": {
+        "name": "Pooling",
+        "file": "pooling.c",
+        "fileloc": "10",
+        "instructions": "85",
+        "total_instructions": "85",
+        "calls": "",
+        "basicblocks": "7",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    }
+}

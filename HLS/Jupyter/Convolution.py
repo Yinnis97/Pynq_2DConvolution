@@ -4,11 +4,10 @@ import numpy as np
 from IPython.display import display
 
 # Constants
-IMAGE_ROW_LEN = 128
-IMAGE_COL_LEN = 128
-TOTAL_PIXELS = IMAGE_ROW_LEN * IMAGE_COL_LEN
-CONV_ROW_LEN = IMAGE_ROW_LEN - 2  # 126
-CONV_COL_LEN = IMAGE_COL_LEN - 2  # 126
+IMAGE_LEN     = 128
+OUTPUT_LEN    = 126
+IN_PIXELS     = IMAGE_LEN * IMAGE_LEN
+OUT_PIXELS    = OUTPUT_LEN * OUTPUT_LEN
 
 # Load bitstream
 overlay = Overlay("/home/xilinx/jupyter_notebooks/conv2d/design_1.bit")
@@ -20,12 +19,12 @@ for i in range(1, 11):
     
     # Load and preprocess
     img_path = f"/home/xilinx/jupyter_notebooks/Input_Images/Picture{i}.bmp"
-    input_img = Image.open(img_path).convert("L").resize((IMAGE_COL_LEN, IMAGE_ROW_LEN))
+    input_img = Image.open(img_path).convert("L").resize((IMAGE_LEN, IMAGE_LEN))
     input_array = np.array(input_img, dtype=np.uint8)
 
     # Allocate buffers
-    in_buffer = allocate(shape=(TOTAL_PIXELS,), dtype=np.uint8)
-    out_buffer = allocate(shape=(TOTAL_PIXELS,), dtype=np.uint8)
+    in_buffer = allocate(shape=(IN_PIXELS,), dtype=np.uint8)
+    out_buffer = allocate(shape=(OUT_PIXELS,), dtype=np.uint8)
     in_buffer[:] = input_array.flatten()
 
     # Send addresses
@@ -43,20 +42,12 @@ for i in range(1, 11):
     print("Convolution done.")
 
     # Get output
-    output_array = out_buffer.copy().reshape((IMAGE_ROW_LEN, IMAGE_COL_LEN))
-    conv_output = output_array[:CONV_ROW_LEN, :CONV_COL_LEN]
-
-    # Pad to 128x128 for visualization
-    padded_output = np.zeros((IMAGE_ROW_LEN, IMAGE_COL_LEN), dtype=np.uint8)
-    padded_output[:CONV_ROW_LEN, :CONV_COL_LEN] = conv_output
+    output_array = out_buffer.copy().reshape((OUTPUT_LEN, OUTPUT_LEN))
 
     # Convert to image and save
-    output_img = Image.fromarray(padded_output, mode='L')
-    
+    output_img = Image.fromarray(output_array, mode='L')
     out_path = f"/home/xilinx/jupyter_notebooks/Output_Images/output{i}.bmp"
     output_img.save(out_path)
-    print(f"Saved: {out_path}")
-    print(f"Output range: min={conv_output.min()}, max={conv_output.max()}")
 
     # Display input and output
     print(f"Displaying Picture{i}.bmp (Input) and output{i}.bmp (Edge Map):")

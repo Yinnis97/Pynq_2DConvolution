@@ -1,0 +1,16 @@
+Application build instructions:
+Compilation flags:
+-x c: Pure C
+-rdc=true flag: Needed for separate compilation, this allows proper linkage of device symbols (like (extern) __constant__) across .cu files.
+
+Compilation commands:
+niels@niels-jetson:~/Documenten/EdgeDetection_NEW$ nvcc -x c -c BMP.c -o BMP.o
+niels@niels-jetson:~/Documenten/EdgeDetection_NEW$ nvcc -x c -c Sobel.c -o Sobel.o
+niels@niels-jetson:~/Documenten/EdgeDetection_NEW$ nvcc -rdc=true -c Sobel.cu -o Sobel_cu.o
+niels@niels-jetson:~/Documenten/EdgeDetection_NEW$ nvcc -rdc=true -c CUDA_Convolution_NEW.cu -o CUDA_Convolution_NEW.o
+
+Linking:
+niels@niels-jetson:~/Documenten/EdgeDetection_NEW$ nvcc CUDA_Convolution_NEW.o Sobel.o Sobel_cu.o BMP.o -o CUDA_Convolution_NEW
+
+Run application:
+niels@niels-jetson:~/Documenten/EdgeDetection_NEW$ ./CUDA_Convolution_NEW ./BMP_Images/lena_8bpp.bmp ./BMP_Images/lena_8bpp_Edge.bmp

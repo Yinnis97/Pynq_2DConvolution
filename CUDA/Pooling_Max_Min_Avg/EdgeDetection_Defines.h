@@ -1,0 +1,29 @@
+#ifndef EDGE_DETECTION_H_
+#define EDGE_DETECTION_H_
+
+// BMP GRAYSCALE
+#define BMP_HEADER_SIZE 14     // Bytes
+#define BMP_DIB_HEADER_SIZE 40 // Bytes
+#define BMP_BPP 0x08           // 8 Bits Per Pixel
+#define BMP_COLOR_BIT_DEPTH 256
+#define BMP_COLOR_TABLE_SIZE (BMP_COLOR_BIT_DEPTH * 4) // BMP Grayscale color palette (256 x 4 bytes = 1024 bytes)
+#define BMP_TOTAL_HEADER_SIZE (BMP_HEADER_SIZE + BMP_DIB_HEADER_SIZE + BMP_COLOR_TABLE_SIZE)
+
+// VGA 640*480: This maximum size is chosen because it would provide enough detail in the edge detection while being performant enough to process in realtime on the CPU.
+#define BMP_IMAGE_ROW_MAX_SIZE 480
+#define BMP_IMAGE_COL_MAX_SIZE 640
+#define BMP_IMAGE_MAX_SIZE (BMP_IMAGE_ROW_MAX_SIZE * BMP_IMAGE_COL_MAX_SIZE)
+
+// PREWITT / SOBEL KERNEL
+// #define KERNEL_ROW_LEN 3
+// #define KERNEL_COL_LEN 3
+
+// VERTICAL / HORIZONTAL EDGE CONVOLUTION OUTPUT
+// #define CONV_OUT_ROW_MAX_LEN ((BMP_IMAGE_ROW_MAX_SIZE - KERNEL_ROW_LEN) + 1)
+// #define CONV_OUT_COL_MAX_LEN ((BMP_IMAGE_COL_MAX_SIZE - KERNEL_COL_LEN) + 1)
+
+// PREWITT / SOBEL EDGE DETECTION OPERATION OUTPUT
+// #define SOBEL_OUT_ROW_MAX_LEN ((BMP_IMAGE_ROW_MAX_SIZE - KERNEL_ROW_LEN) + 1)
+// #define SOBEL_OUT_COL_MAX_LEN ((BMP_IMAGE_COL_MAX_SIZE - KERNEL_COL_LEN) + 1)
+
+#endif // EDGE_DETECTION_H_ 
